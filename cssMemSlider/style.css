@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #373737;
+}
+
+.slider {
+  display: grid;
+  grid-template-areas:
+    "slider slider slider"
+    "description description controls";
+  row-gap: 0.5em;
+  max-width: 30%;
+  margin: 3em auto;
+  animation-name: showSlider;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+.content {
+  grid-area: slider;
+  display: flex;
+  justify-content: flex-start;
+  overflow: hidden;
+  height: 14.2em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.3em;
+  user-select: none;
+}
+
+.description {
+  grid-area: description;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2vw;
+  font-weight: bold;
+  align-items: center;
+}
+
+.controls {
+  grid-area: controls;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  column-gap: 0.2em;
+  color: white;
+}
+
+label {
+  display: flex;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+  user-select: none;
+  cursor: pointer;
+}
+
+label:hover .control {
+  background-color: white;
+  border-color: white;
+}
+
+label:active .control {
+  opacity: 0.5;
+}
+
+.control {
+  display: block;
+  width: 0.3em;
+  height: 0.3em;
+  background-color: aqua;
+  border: 0.1em solid aqua;
+  border-radius: 50%;
+  align-self: center;
+}
+
+.slide {
+  width: 0;
+  height: 0;
+}
+
+.slide1,
+.slide2,
+.slide3,
+.slide4 {
+  animation: hideContent 0.3s forwards;
+}
+.description1,
+.description2,
+.description3,
+.description4 {
+  animation: hideDescription 0.3s forwards;
+}
+
+input#slide1:checked ~ .content .slide1 {
+  animation: showContent 0.7s forwards;
+}
+input#slide1:checked ~ .description .description1 {
+  animation: showDescription 0.7s forwards;
+}
+input#slide1:checked ~ .controls label .control1 {
+  background-color: transparent;
+}
+
+input#slide2:checked ~ .content .slide2 {
+  animation: showContent 0.7s forwards;
+}
+input#slide2:checked ~ .description .description2 {
+  animation: showDescription 0.7s forwards;
+}
+input#slide2:checked ~ .controls label .control2 {
+  background-color: transparent;
+}
+
+input#slide3:checked ~ .content .slide3 {
+  animation: showContent 0.7s forwards;
+}
+input#slide3:checked ~ .description .description3 {
+  animation: showDescription 0.7s forwards;
+}
+input#slide3:checked ~ .controls label .control3 {
+  background-color: transparent;
+}
+
+input#slide4:checked ~ .content .slide4 {
+  animation: showContent 0.7s forwards;
+}
+input#slide4:checked ~ .description .description4 {
+  animation: showDescription 0.7s forwards;
+}
+input#slide4:checked ~ .controls label .control4 {
+  background-color: transparent;
+}
+
+input {
+  display: none;
+}
+
+@keyframes showContent {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes hideContent {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
+@keyframes showDescription {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hideDescription {
+  from {
+    opacity: 1;
+    font-size: 2vw;
+  }
+  to {
+    opacity: 0;
+    font-size: 0;
+  }
+}
+
+@keyframes showSlider {
+  from {
+    opacity: 0;
+    font-size: 0;
+  }
+  to {
+    opacity: 1;
+    font-size: 2vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider {
+    grid-template-areas:
+      "slider"
+      "controls"
+      "description";
+  }
+  .controls {
+    justify-content: center;
+  }
+}
