@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css" />
     <title>CSS Mem Slider</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <div class="slider">
+      <input type="radio" name="slide-check" id="slide1" checked="" />
+      <input type="radio" name="slide-check" id="slide2" />
+      <input type="radio" name="slide-check" id="slide3" />
+      <input type="radio" name="slide-check" id="slide4" />
+      <div class="content">
+        <div class="slide slide1"><img src="./memes/1.jpg" alt="meme1" /></div>
+        <div class="slide slide2"><img src="./memes/2.jpg" alt="meme2" /></div>
+        <div class="slide slide3"><img src="./memes/3.jpg" alt="meme3" /></div>
+        <div class="slide slide4"><img src="./memes/4.jpg" alt="meme4" /></div>
+      </div>
+      <div class="description">
+        <p class="description1">Hola, amigos!</p>
+        <p class="description2">Learn JS</p>
+        <p class="description3">Firedogs</p>
+        <p class="description4">Do not be ill</p>
+      </div>      
+      <div class="controls">
+        <label for="slide1"><div class="control control1"></div></label>
+        <label for="slide2"><div class="control control2"></div></label>
+        <label for="slide3"><div class="control control3"></div></label>
+        <label for="slide4"><div class="control control4"></div></label>
+      </div>
+    </div>
+  </body>
 </html>
